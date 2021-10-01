@@ -1,2 +1,2 @@
 # Essensplaner
-Jo Bro we trz android
+Jo Bro we try android
