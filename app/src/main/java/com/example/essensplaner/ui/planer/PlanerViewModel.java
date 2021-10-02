@@ -1,14 +1,14 @@
-package com.example.essensplaner.ui.gallery;
+package com.example.essensplaner.ui.planer;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class PlanerViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public PlanerViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is gallery fragment");
     }

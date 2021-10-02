@@ -1,4 +1,4 @@
-package com.example.essensplaner.ui.slideshow;
+package com.example.essensplaner.ui.favs;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
