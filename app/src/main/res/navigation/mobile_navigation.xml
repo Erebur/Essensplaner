@@ -14,16 +14,11 @@
         android:id="@+id/loginFragment"
         android:name="com.example.essensplaner.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/toHome"
-            app:destination="@id/nav_home"
-            app:enterAnim="@anim/nav_default_pop_enter_anim"
-            app:exitAnim="@anim/nav_default_pop_exit_anim"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true"
-            app:popEnterAnim="@animator/nav_default_pop_enter_anim"
-            app:popExitAnim="@animator/nav_default_pop_exit_anim" />
-    </fragment>
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/einkaufslisteFragment"
+        android:name="com.example.essensplaner.einkaufslisteFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" />
 
 </navigation>
