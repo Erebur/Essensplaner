@@ -3,9 +3,7 @@ package com.example.essensplaner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.essensplaner.placeholder.PlaceholderContent.PlaceholderItem;
 import com.example.essensplaner.databinding.FragmentEinkaufslisteBinding;
@@ -34,8 +32,8 @@ public class MyeinkaufslisteRecyclerViewAdapter extends RecyclerView.Adapter<Mye
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+//        holder.mIdView.setText(mValues.get(position).id);
+//        holder.mContentView.setText(mValues.get(position).content);
     }
 
     @Override
@@ -44,19 +42,19 @@ public class MyeinkaufslisteRecyclerViewAdapter extends RecyclerView.Adapter<Mye
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
-        public final TextView mContentView;
+//        public final TextView mIdView;
+//        public final TextView mContentView;
         public PlaceholderItem mItem;
 
         public ViewHolder(FragmentEinkaufslisteBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+//            mIdView = binding.itemNumber;
+//            mContentView = binding.content;
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return ""; // super.toString() + " '" + mContentView.getText() + "'";
         }
     }
 }
