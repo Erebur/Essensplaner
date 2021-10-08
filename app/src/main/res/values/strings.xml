@@ -27,9 +27,11 @@
     <string name="string_string_string_string_login">Login</string>
     <string name="einkaufsliste">Einkaufsliste</string>
     <string name="string_einkaufsliste">Einkaufsliste</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="anzahl">Anzahl</string>
     <string name="produkt">Produkt</string>
     <string name="add_to_table">Add to table</string>
+    <string name="string_logout">Logout</string>
+    <string name="insert">Insert</string>
 </resources>
