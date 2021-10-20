@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +50,9 @@ public class einkaufsliste extends Fragment {
         return fragment;
     }
 
+    ListView listView;
+    Produkt[] test = {new Produkt("Pommes" , "bro idk")  ,new Produkt("Salat" , "i still dk")};
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +60,19 @@ public class einkaufsliste extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+//        listView =
+//        ArrayAdapter<Produkt> arrayAdapter = new ArrayAdapter<Produkt>(this , R.layout.fragment_einkaufsliste,R.id.textView,test);
+//        listView.setAdapter(arrayAdapterP);
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_einkaufsliste, container, false);
     }
+
+
+
+
 }

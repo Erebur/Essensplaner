@@ -14,5 +14,9 @@
             android:id="@+id/einkaufslisteFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/string_einkaufsliste" />
+        <item
+            android:id="@+id/einkaufslisteAktivity"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="@string/string_einkaufsliste" />
     </group>
 </menu>
