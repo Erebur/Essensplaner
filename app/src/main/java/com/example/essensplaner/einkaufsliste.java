@@ -61,7 +61,7 @@ public class einkaufsliste extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         ArrayAdapter<Produkt> arrayAdapter = new ArrayAdapter<>(this.getContext(), R.layout.fragment_einkaufsliste, test);
-        ListView listView = (ListView) findViewById(R.id.frEinkaufslisteList);
+        ListView listView = (ListView) R.findById(R.id.frEinkaufslisteList);
         listView.setAdapter(arrayAdapter);
     }
 
