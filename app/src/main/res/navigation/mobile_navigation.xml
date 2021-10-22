@@ -20,9 +20,4 @@
         android:name="com.example.essensplaner.einkaufsliste"
         android:label="fragment_item_list"
         tools:layout="@layout/fragment_einkaufsliste" />
-    <activity
-        android:id="@+id/einkaufslisteTest"
-        android:name="com.example.essensplaner.einkaufslisteTest"
-        android:label="activity_einkaufsliste_test"
-        tools:layout="@layout/activity_einkaufsliste_test" />
 </navigation>
