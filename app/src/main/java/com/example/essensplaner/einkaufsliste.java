@@ -75,7 +75,4 @@ public class einkaufsliste extends Fragment {
         return inflater.inflate(R.layout.fragment_einkaufsliste, container, false);
     }
 
-
-
-
 }
