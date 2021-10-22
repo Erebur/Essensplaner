@@ -25,5 +25,4 @@
         android:name="com.example.essensplaner.einkaufslisteTest"
         android:label="activity_einkaufsliste_test"
         tools:layout="@layout/activity_einkaufsliste_test" />
-
 </navigation>

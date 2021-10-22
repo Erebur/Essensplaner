@@ -60,9 +60,9 @@ public class einkaufsliste extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-//        listView =
-//        ArrayAdapter<Produkt> arrayAdapter = new ArrayAdapter<Produkt>(this , R.layout.fragment_einkaufsliste,R.id.textView,test);
-//        listView.setAdapter(arrayAdapterP);
+        listView = R.
+        ArrayAdapter<Produkt> arrayAdapter = new ArrayAdapter<Produkt>(this.getContext() , R.layout.fragment_einkaufsliste,test);
+        listView.setAdapter(arrayAdapter);
 
     }
 
