@@ -3,17 +3,16 @@ package com.example.essensplaner;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewbinding.ViewBindings;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewManager;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.function.Consumer;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +45,7 @@ public class einkaufsliste extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static einkaufsliste newInstance(String param1, String param2) {
+
         einkaufsliste fragment = new einkaufsliste();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -54,8 +54,8 @@ public class einkaufsliste extends Fragment {
         return fragment;
     }
 
-    ListView listView;
-    Produkt[] test = {new Produkt("Pommes" , "bro idk")  ,new Produkt("Salat" , "i still dk")};
+
+    Produkt[] test = {new Produkt("Pommes", "bro idk"), new Produkt("Salat", "i still dk")};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,14 +65,15 @@ public class einkaufsliste extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         ArrayAdapter<Produkt> arrayAdapter = new ArrayAdapter<>(this.getContext(), R.layout.fragment_einkaufsliste, test);
-        ListView listView = rootView.findViewById(R.id.frEinkaufslisteList);
+        ListView listView = (ListView) rootView.findViewById(Integer.parseInt("frEinkauslisteList"));
         listView.setAdapter(arrayAdapter);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_einkaufsliste, container, false);
     }
+
 
 }
