@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewManager;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +21,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class einkaufsliste extends Fragment {
+    View rootView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,7 +65,7 @@ public class einkaufsliste extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         ArrayAdapter<Produkt> arrayAdapter = new ArrayAdapter<>(this.getContext(), R.layout.fragment_einkaufsliste, test);
-        ListView listView = (ListView) R.findById(R.id.frEinkaufslisteList);
+        ListView listView = rootView.findViewById(R.id.frEinkaufslisteList);
         listView.setAdapter(arrayAdapter);
     }
 
