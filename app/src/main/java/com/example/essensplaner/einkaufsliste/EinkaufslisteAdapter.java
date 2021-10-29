@@ -1,5 +1,7 @@
 package com.example.essensplaner.einkaufsliste;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -8,17 +10,29 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.essensplaner.Produkt;
+import com.example.essensplaner.R;
 
 import java.util.ArrayList;
 
 public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdapter.ViewHolder> {
 
-    ArrayList<Produkt> mdlProdukt
+    ArrayList<Produkt> mdlProdukt ;
+
+    public EinkaufslisteAdapter(ArrayList<Produkt> produkts) {
+        this.mdlProdukt = produkts;
+    }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        Context context = parent.getContext();
+        LayoutInflater inflater = LayoutInflater.from(context);
+
+        // Inflate the custom layout
+        View contactView = inflater.inflate(R.layout.activity_einkaufsliste, parent, false);
+
+        // Return a new holder instance
+        return new ViewHolder(contactView);
     }
 
     @Override
@@ -44,8 +58,6 @@ public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdap
             // to access the context from any ViewHolder instance.
             super(itemView);
 
-            txtNr = (TextView) itemView.findViewById(R.id.nr);
-            txtDatum = (TextView) itemView.findViewById(R.id.datum);
 
         }
     };
