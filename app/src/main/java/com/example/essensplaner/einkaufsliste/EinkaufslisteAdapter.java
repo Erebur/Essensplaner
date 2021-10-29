@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdapter.ViewHolder> {
 
-    ArrayList<Produkt> mdlProdukt
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -44,10 +42,8 @@ public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdap
             // to access the context from any ViewHolder instance.
             super(itemView);
 
-            txtNr = (TextView) itemView.findViewById(R.id.nr);
-            txtDatum = (TextView) itemView.findViewById(R.id.datum);
-
         }
-    };
     }
+
+
 }
