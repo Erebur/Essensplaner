@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/button"
@@ -51,16 +51,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEinkaufsliste"
-        android:layout_width="0dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:listitem="@layout/recycler_view_item" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

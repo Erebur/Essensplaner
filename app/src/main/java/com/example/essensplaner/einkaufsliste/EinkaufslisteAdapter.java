@@ -61,5 +61,5 @@ public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdap
 
         }
     };
-    }
+
 }
