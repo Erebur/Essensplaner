@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 
 import com.example.essensplaner.Produkt;
@@ -23,10 +24,10 @@ public class Einkaufsliste extends AppCompatActivity {
 
 
 
-        RecyclerView rvAuftrage = (RecyclerView) findViewById(R.id.rvEinkaufsliste);
+        RecyclerView rvEinkaufsliste = (RecyclerView) findViewById(R.id.rvEinkaufsliste);
         ArrayAdapter<Produkt> ad = new ArrayAdapter<Produkt>(this, R.layout.activity_einkaufsliste, test);
-//        rvAuftrage.setAdapter();
-        rvAuftrage.setLayoutManager(new LinearLayoutManager((this)));
+        rvEinkaufsliste.setAdapter();
+        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
 
     }
 
