@@ -15,9 +15,9 @@
         android:name="com.example.essensplaner.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
-    <fragment
+    <activity
         android:id="@+id/einkaufslisteFragment"
-        android:name="com.example.essensplaner.einkaufsliste"
+        android:name="com.example.essensplaner."
         android:label="fragment_item_list"
-        tools:layout="@layout/fragment_einkaufsliste" />
+        tools:layout="@layout/activity_einkaufsliste" />
 </navigation>
