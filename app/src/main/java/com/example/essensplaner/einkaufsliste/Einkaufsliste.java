@@ -24,10 +24,10 @@ public class Einkaufsliste extends AppCompatActivity {
 
 
 
-        RecyclerView rvEinkaufsliste = (RecyclerView) findViewById(R.id.rvEinkaufsliste);
-        ArrayAdapter<Produkt> ad = new ArrayAdapter<Produkt>(this, R.layout.activity_einkaufsliste, test);
-        rvEinkaufsliste.setAdapter();
-        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
+//        RecyclerView rvEinkaufsliste = (RecyclerView) findViewById(R.id.rvEinkaufsliste);
+//        ArrayAdapter<Produkt> ad = new ArrayAdapter<Produkt>(this, R.layout.activity_einkaufsliste, test);
+//        rvEinkaufsliste.setAdapter();
+//        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
 
     }
 
