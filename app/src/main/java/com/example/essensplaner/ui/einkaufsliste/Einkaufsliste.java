@@ -1,4 +1,4 @@
-package com.example.essensplaner.einkaufsliste;
+package com.example.essensplaner.ui.einkaufsliste;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;

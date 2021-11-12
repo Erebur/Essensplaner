@@ -1,4 +1,4 @@
-package com.example.essensplaner.einkaufsliste;
+package com.example.essensplaner.ui.einkaufsliste;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -55,8 +55,6 @@ public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdap
             super(itemView);
             myTextView1  = itemView.findViewById(R.id.textView1);
             myTextView2  = itemView.findViewById(R.id.textView2);
-
-
         }
     }
 }
