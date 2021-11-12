@@ -25,11 +25,13 @@
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/switch_item.xml" value="0.3255208333333333" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml" value="0.30572916666666666" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/main.xml" value="0.30572916666666666" />
+        <entry key="app/src/main/res/layout/activity_einkaufsliste.xml" value="0.40005022601707685" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.43931159420289856" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.43931159420289856" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.276268115942029" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.43931159420289856" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.43931159420289856" />
+        <entry key="app/src/main/res/layout/recycler_view_item.xml" value="0.47604166666666664" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.8651282051282051" />
       </map>
     </option>

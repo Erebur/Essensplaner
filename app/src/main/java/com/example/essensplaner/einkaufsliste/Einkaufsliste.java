@@ -6,15 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 
-import com.example.essensplaner.Produkt;
 import com.example.essensplaner.R;
 
 import java.util.ArrayList;
 
 public class Einkaufsliste extends AppCompatActivity {
+
+    RecyclerView rvEinkaufsliste ;
 
 
     ArrayList<Produkt> test = new ArrayList<Produkt>()
@@ -29,10 +28,11 @@ public class Einkaufsliste extends AppCompatActivity {
         setContentView(R.layout.activity_einkaufsliste);
 
 
-        RecyclerView rvEinkaufsliste = (RecyclerView) findViewById(R.id.rvEinkaufsliste);
-        ArrayAdapter<Produkt> ad = new ArrayAdapter<Produkt>(this, R.layout.activity_einkaufsliste, test);
-        EinkaufslisteAdapter ea = new EinkaufslisteAdapter(test);
-        rvEinkaufsliste.setAdapter(ea);
+        rvEinkaufsliste = findViewById(R.id.rvEinkaufsliste);
+
+        EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this , test);
+
+        rvEinkaufsliste.setAdapter(einkaufslisteAdapter);
         rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
 
     }

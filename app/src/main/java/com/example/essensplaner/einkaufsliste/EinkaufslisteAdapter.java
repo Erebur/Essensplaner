@@ -9,57 +9,51 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.essensplaner.Produkt;
 import com.example.essensplaner.R;
 
 import java.util.ArrayList;
 
 public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdapter.ViewHolder> {
 
-    ArrayList<Produkt> mdlProdukt ;
+    ArrayList<Produkt> produkts;
+    Context context;
 
-    public EinkaufslisteAdapter(ArrayList<Produkt> produkts) {
-        this.mdlProdukt = produkts;
+
+    public EinkaufslisteAdapter( Context context , ArrayList<Produkt> produkts) {
+        this.produkts = produkts;
+        this.context = context;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.activity_einkaufsliste, parent, false);
-
-        // Return a new holder instance
-        return new ViewHolder(contactView);
+        View view =  inflater.inflate(R.layout.recycler_view_item  , parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.myTextView1.setText(produkts.get(position).getName());
+        holder.myTextView2.setText(produkts.get(position).getBeschreibung());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return produkts.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // Your holder should contain a member variable
-        // for any view that will be set as you render a row
-        public TextView txtNr;
-        public TextView txtDatum;
 
-        // We also create a constructor that accepts the entire item row
-        // and does the view lookups to find each subview
-        public ViewHolder(View itemView) {
-            // Stores the itemView in a public final member variable that can be used
-            // to access the context from any ViewHolder instance.
+        TextView myTextView1 , myTextView2;
+
+
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            myTextView1  = itemView.findViewById(R.id.textView1);
+            myTextView2  = itemView.findViewById(R.id.textView2);
 
 
         }
-    };
-
+    }
 }
