@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,12 +16,12 @@ import java.util.ArrayList;
 
 public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdapter.ViewHolder> {
 
-    ArrayList<Produkt> produkts;
+    ArrayList<Product> products;
     Context context;
 
 
-    public EinkaufslisteAdapter( Context context , ArrayList<Produkt> produkts) {
-        this.produkts = produkts;
+    public EinkaufslisteAdapter( Context context , ArrayList<Product> products) {
+        this.products = products;
         this.context = context;
     }
 
@@ -34,18 +35,20 @@ public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.myTextView1.setText(produkts.get(position).getName());
-        holder.myTextView2.setText(produkts.get(position).getBeschreibung());
+        holder.myTextView1.setText(products.get(position).getName());
+        holder.myTextView2.setText(products.get(position).getDescription());
     }
 
     @Override
     public int getItemCount() {
-        return produkts.size();
+        return products.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView myTextView1 , myTextView2;
+        //TODO Google image search
+        ImageView myImage ;
 
 
         public ViewHolder(@NonNull View itemView) {

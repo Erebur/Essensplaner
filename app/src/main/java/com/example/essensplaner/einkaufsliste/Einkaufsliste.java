@@ -16,10 +16,10 @@ public class Einkaufsliste extends AppCompatActivity {
     RecyclerView rvEinkaufsliste ;
 
 
-    ArrayList<Produkt> test = new ArrayList<Produkt>()
+    ArrayList<Product> test = new ArrayList<Product>()
     {{
-        add(new Produkt("Pommes", "bro idk"));
-        add(new Produkt("Salat", "i still dk"));
+        add(new Product("Pommes", "bro idk"));
+        add(new Product("Salat", "i still dk"));
     }};
 
     @Override
