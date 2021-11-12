@@ -12,10 +12,16 @@ import android.widget.ArrayAdapter;
 import com.example.essensplaner.Produkt;
 import com.example.essensplaner.R;
 
+import java.util.ArrayList;
+
 public class Einkaufsliste extends AppCompatActivity {
 
 
-    Produkt[] test = {new Produkt("Pommes", "bro idk"), new Produkt("Salat", "i still dk")};
+    ArrayList<Produkt> test = new ArrayList<Produkt>()
+    {{
+        add(new Produkt("Pommes", "bro idk"));
+        add(new Produkt("Salat", "i still dk"));
+    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +29,10 @@ public class Einkaufsliste extends AppCompatActivity {
         setContentView(R.layout.activity_einkaufsliste);
 
 
-
         RecyclerView rvEinkaufsliste = (RecyclerView) findViewById(R.id.rvEinkaufsliste);
         ArrayAdapter<Produkt> ad = new ArrayAdapter<Produkt>(this, R.layout.activity_einkaufsliste, test);
-        rvEinkaufsliste.setAdapter();
+        EinkaufslisteAdapter ea = new EinkaufslisteAdapter(test);
+        rvEinkaufsliste.setAdapter(ea);
         rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
 
     }
