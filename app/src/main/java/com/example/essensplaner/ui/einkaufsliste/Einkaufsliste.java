@@ -1,6 +1,7 @@
 package com.example.essensplaner.ui.einkaufsliste;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,11 +15,12 @@ import java.util.ArrayList;
 
 public class Einkaufsliste extends AppCompatActivity {
 
-    RecyclerView rvEinkaufsliste ;
-
-
+    RecyclerView rvEinkaufsliste;
     ArrayList<Product> test = new ArrayList<Product>() {
-    }; //todo add more products from db
+//todo add more products from db
+    };
+    EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +29,6 @@ public class Einkaufsliste extends AppCompatActivity {
 
 
         rvEinkaufsliste = findViewById(R.id.rvEinkaufsliste);
-
-        EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
 
         rvEinkaufsliste.setAdapter(einkaufslisteAdapter);
         rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
@@ -44,11 +44,15 @@ public class Einkaufsliste extends AppCompatActivity {
 
     }
 
-//    public void btnInsertEinkauf(View view) {
-//        test.add(new Product(findViewById(R.id.editTextTextPersonName).getText(), R.id.editTextTextPersonName2));
-//        EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
-//        rvEinkaufsliste.setAdapter(einkaufslisteAdapter);
-//        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
-//
-//    }
+    public void btnInsertEinkauf(View view) {
+        test.add(findProduct());
+        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
+    }
+
+    private Product findProduct() {
+        Product product = new Product();
+        product.setAmount(Integer.parseInt(((EditText) findViewById(R.id.editTextTextPersonName)).getText().toString()));
+        product.setName(((EditText) findViewById(R.id.editTextTextPersonName2)).getText().toString());
+        return product;
+    }
 }

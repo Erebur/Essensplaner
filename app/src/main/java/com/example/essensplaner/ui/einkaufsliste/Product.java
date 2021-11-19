@@ -22,6 +22,11 @@ public class Product {
         this.similarProducts = similarProducts;
     }
 
+    public Product() {
+        this.amount = 0;
+        this.name = "";
+    }
+
     public String getName() {
         return name;
     }
