@@ -35,8 +35,8 @@ public class EinkaufslisteAdapter extends RecyclerView.Adapter<EinkaufslisteAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.myTextView1.setText(products.get(position).getName());
-        holder.myTextView2.setText(products.get(position).getDescription());
+        holder.myTextView1.setText(String.format("Amount: %d", products.get(position).getAmount()));
+        holder.myTextView2.setText("Name: " + products.get(position).getName());
     }
 
     @Override

@@ -3,17 +3,19 @@ package com.example.essensplaner.ui.einkaufsliste;
 import java.util.ArrayList;
 
 public class Product {
-    private String name ;
+    private int amount;
+    private String name;
     private String description;
     private String brand;
-    private ArrayList<Product> similarProducts ;
+    private ArrayList<Product> similarProducts;
 
-    public Product(String name, String description) {
+    public Product(int amount, String name) {
+        this.amount = amount;
         this.name = name;
-        this.description = description;
     }
 
-    public Product(String name, String description, String brand, ArrayList<Product> similarProducts) {
+    public Product(int amount, String name, String description, String brand, ArrayList<Product> similarProducts) {
+        this.amount = amount;
         this.name = name;
         this.description = description;
         this.brand = brand;
@@ -50,5 +52,13 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
