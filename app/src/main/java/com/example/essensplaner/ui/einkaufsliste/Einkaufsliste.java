@@ -17,13 +17,17 @@ public class Einkaufsliste extends AppCompatActivity {
 
     RecyclerView rvEinkaufsliste;
     ArrayList<Product> test = new ArrayList<Product>() {
-//todo add more products from db
+        //todo add more products from db
     };
-    EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
 
+    EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
+    EditText name;
+    EditText anzahl;
+    Button btnInsertEinkauf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_einkaufsliste);
 
@@ -33,26 +37,23 @@ public class Einkaufsliste extends AppCompatActivity {
         rvEinkaufsliste.setAdapter(einkaufslisteAdapter);
         rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
 
-        EditText anzahl = findViewById(R.id.editTextTextPersonName);
-        EditText name = findViewById(R.id.editTextTextPersonName2);
-        Button btnInsertEinkauf = findViewById(R.id.button);
+
+        anzahl = findViewById(R.id.editTextTextPersonName);
+        name = findViewById(R.id.editTextTextPersonName2);
+        btnInsertEinkauf = findViewById(R.id.button);
 
         btnInsertEinkauf.setOnClickListener(v -> {
-            test.add(new Product(Integer.parseInt(anzahl.getText().toString()), name.getText().toString()));
-
+            test.add(findProduct());
+            einkaufslisteAdapter.notifyItemChanged(0);
         });
 
     }
 
     public void btnInsertEinkauf(View view) {
         test.add(findProduct());
-        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
     }
 
     private Product findProduct() {
-        Product product = new Product();
-        product.setAmount(Integer.parseInt(((EditText) findViewById(R.id.editTextTextPersonName)).getText().toString()));
-        product.setName(((EditText) findViewById(R.id.editTextTextPersonName2)).getText().toString());
-        return product;
+        return new Product(Integer.parseInt(anzahl.getText().toString()), name.getText().toString());
     }
 }
