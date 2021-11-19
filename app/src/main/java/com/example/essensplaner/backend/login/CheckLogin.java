@@ -1,9 +1,7 @@
 package com.example.essensplaner.backend.login;
 
-import com.example.essensplaner.data.Result;
 import com.example.essensplaner.data.model.LoggedInUser;
 
-import java.io.IOException;
 import java.util.Locale;
 
 public class CheckLogin {
