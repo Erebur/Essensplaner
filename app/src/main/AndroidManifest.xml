@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Essensplaner">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
             android:name=".ui.einkaufsliste.Einkaufsliste"
             android:exported="true" />
         <activity

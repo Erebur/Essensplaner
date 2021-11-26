@@ -15,11 +15,11 @@ import java.util.ArrayList;
 
 public class Einkaufsliste extends AppCompatActivity {
 
+    public static boolean addToTop = false;
     RecyclerView rvEinkaufsliste;
     ArrayList<Product> test = new ArrayList<Product>() {
         //todo add more products from db
     };
-
     EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
     EditText name;
     EditText anzahl;
@@ -50,7 +50,12 @@ public class Einkaufsliste extends AppCompatActivity {
     }
 
     public void btnInsertEinkauf(View view) {
-        test.add(findProduct());
+        if (!addToTop) {
+            test.add(findProduct());
+        } else {
+            test.add(0, findProduct());
+        }
+
     }
 
     private Product findProduct() {

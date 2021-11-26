@@ -20,4 +20,8 @@
         android:name="com.example.essensplaner.ui.einkaufsliste.Einkaufsliste"
         android:label="fragment_item_list"
         tools:layout="@layout/activity_einkaufsliste" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.example.essensplaner.SettingsActivity"
+        android:label="SettingsActivity" />
 </navigation>
