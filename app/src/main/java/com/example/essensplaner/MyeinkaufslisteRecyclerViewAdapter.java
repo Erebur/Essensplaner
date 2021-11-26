@@ -1,12 +1,12 @@
 package com.example.essensplaner;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.example.essensplaner.placeholder.PlaceholderContent.PlaceholderItem;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.essensplaner.databinding.FragmentEinkaufslisteBinding;
+import com.example.essensplaner.placeholder.PlaceholderContent.PlaceholderItem;
 
 import java.util.List;
 

@@ -5,13 +5,12 @@
       <map>
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3458333333333333" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3458333333333333" />
-        <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/activity_einkaufsliste.xml" value="0.3255208333333333" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/activity_einkaufsliste_test.xml" value="0.31521739130434784" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/activity_main.xml" value="0.30572916666666666" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/app_bar_main.xml" value="0.30572916666666666" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/content_einkaufsliste_test.xml" value="0.31521739130434784" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/content_main.xml" value="0.30572916666666666" />
-        <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_einkaufsliste.xml" value="0.25" />
+        <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_einkaufsliste.xml" value="0.3255208333333333" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_einkfausliste.xml" value="0.3255208333333333" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_first.xml" value="0.31521739130434784" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_gallery.xml" value="0.3255208333333333" />
@@ -24,6 +23,13 @@
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/switch_item.xml" value="0.3255208333333333" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml" value="0.30572916666666666" />
         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/main.xml" value="0.30572916666666666" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/activity_einkaufsliste.xml" value="0.3625" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/content_main.xml" value="0.3625" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_einkaufsliste.xml" value="0.3625" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_home.xml" value="0.15942028985507245" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_login.xml" value="0.15942028985507245" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml" value="0.3569230769230769" />
+        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/menu/main.xml" value="0.3625" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.276268115942029" />
       </map>
     </option>
