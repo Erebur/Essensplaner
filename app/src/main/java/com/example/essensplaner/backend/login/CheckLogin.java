@@ -8,7 +8,7 @@ public class CheckLogin {
 
     public static void check(LoggedInUser fakeUser, String password) throws Exception {
         //TODO: implement login with DB
-        if (fakeUser.getDisplayName().toLowerCase(Locale.ROOT).equals("admin") && password.hashCode() == "42069".hashCode()  ){
+        if (fakeUser.getDisplayName().toLowerCase(Locale.ROOT).equals("admin") && password.hashCode() == "12345".hashCode()  ){
             return ;
         }
          throw new Exception("Passwords does not match to user");

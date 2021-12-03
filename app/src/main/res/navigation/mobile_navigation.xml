@@ -21,7 +21,8 @@
         android:label="fragment_item_list"
         tools:layout="@layout/activity_einkaufsliste" />
     <activity
-        android:id="@+id/settingsActivity"
+        android:id="@+id/settings"
         android:name="com.example.essensplaner.SettingsActivity"
-        android:label="SettingsActivity" />
+        android:label="SettingsActivity"
+        tools:layout="@layout/settings_activity"/>
 </navigation>
