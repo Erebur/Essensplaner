@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Essensplaner"
 include ':app'
+include ':kotlin:database'

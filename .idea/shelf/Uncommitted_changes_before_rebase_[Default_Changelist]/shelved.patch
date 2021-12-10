@@ -1,0 +1,79 @@
+Index: app/src/main/res/menu/main.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<menu xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\">\r\n    <item\r\n        android:id=\"@+id/action_settings\"\r\n        android:orderInCategory=\"1\"\r\n        android:title=\"@string/action_settings\"\r\n        app:showAsAction=\"never\" />\r\n    <item\r\n        android:id=\"@+id/action_logout\"\r\n        android:orderInCategory=\"2\"\r\n        android:title=\"@string/string_logout\" />\r\n</menu>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/menu/main.xml b/app/src/main/res/menu/main.xml
+--- a/app/src/main/res/menu/main.xml	
++++ b/app/src/main/res/menu/main.xml	
+@@ -1,13 +1,15 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <menu xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto">
+-    <item
+-        android:id="@+id/action_settings"
+-        android:orderInCategory="1"
+-        android:title="@string/action_settings"
+-        app:showAsAction="never" />
+-    <item
+-        android:id="@+id/action_logout"
+-        android:orderInCategory="2"
+-        android:title="@string/string_logout" />
++
++        <item
++            android:id="@+id/settingsActivity"
++            android:orderInCategory="1"
++            android:title="@string/action_settings"
++            app:showAsAction="never" />
++        <item
++            android:id="@+id/action_logout"
++            android:orderInCategory="2"
++            android:title="@string/string_logout" />
++
+ </menu>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.3458333333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.3458333333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/activity_einkaufsliste_test.xml\" value=\"0.31521739130434784\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/activity_main.xml\" value=\"0.30572916666666666\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/app_bar_main.xml\" value=\"0.30572916666666666\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/content_einkaufsliste_test.xml\" value=\"0.31521739130434784\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/content_main.xml\" value=\"0.30572916666666666\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_einkaufsliste.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_einkfausliste.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_first.xml\" value=\"0.31521739130434784\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_gallery.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_home.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_item_list.xml\" value=\"0.31875\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_login.xml\" value=\"0.5\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_second.xml\" value=\"0.31521739130434784\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/fragment_slideshow.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/nav_header_main.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/switch_item.xml\" value=\"0.3255208333333333\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml\" value=\"0.30572916666666666\" />\r\n        <entry key=\"..\\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/main.xml\" value=\"0.30572916666666666\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/activity_einkaufsliste.xml\" value=\"0.3625\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/content_main.xml\" value=\"0.3625\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_einkaufsliste.xml\" value=\"0.3625\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_home.xml\" value=\"0.15942028985507245\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_login.xml\" value=\"0.15942028985507245\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/settings_activity.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml\" value=\"0.3569230769230769\" />\r\n        <entry key=\"..\\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/menu/main.xml\" value=\"0.3625\" />\r\n        <entry key=\"app/src/main/res/layout/fragment_gallery.xml\" value=\"0.276268115942029\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n  <component name=\"VisualizationToolProject\">\r\n    <option name=\"state\">\r\n      <ProjectState>\r\n        <option name=\"scale\" value=\"0.33\" />\r\n      </ProjectState>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -23,6 +23,7 @@
+         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/layout/switch_item.xml" value="0.3255208333333333" />
+         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml" value="0.30572916666666666" />
+         <entry key="..\:/Daten/sweber/android_projekts/Essensplaner/app/src/main/res/menu/main.xml" value="0.30572916666666666" />
++        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/drawable/side_nav_bar.xml" value="0.37864583333333335" />
+         <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/activity_einkaufsliste.xml" value="0.3625" />
+         <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/content_main.xml" value="0.3625" />
+         <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/fragment_einkaufsliste.xml" value="0.3625" />
+@@ -31,6 +32,7 @@
+         <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/layout/settings_activity.xml" value="0.33" />
+         <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/menu/activity_main_drawer.xml" value="0.3569230769230769" />
+         <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/menu/main.xml" value="0.3625" />
++        <entry key="..\:/Users/reder/StudioProjects/Essensplaner/app/src/main/res/xml/root_preferences.xml" value="0.3625" />
+         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.276268115942029" />
+       </map>
+     </option>
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\" translatable=\"false\">Essensplaner</string>\r\n    <string name=\"nav_header_title\" translatable=\"false\">Essensplaner</string>\r\n    <string name=\"nav_header_subtitle\" translatable=\"false\">android.studio@android.com</string>\r\n    <string name=\"nav_header_desc\">Navigation header</string>\r\n    <string name=\"action_settings\">Settings</string>\r\n    <string name=\"menu_home\">Home</string>\r\n\r\n    <!-- Strings related to login -->\r\n    <string name=\"prompt_email\">Email or Username</string>\r\n    <string name=\"prompt_password\">Password</string>\r\n    <string name=\"action_sign_in\">Sign in or register</string>\r\n    <string name=\"action_sign_in_short\">Sign in</string>\r\n    <string name=\"welcome\">\"Welcome! \"</string>\r\n    <string name=\"invalid_username\">Not a valid username</string>\r\n    <string name=\"invalid_password\">Password must be >4 characters</string>\r\n    <string name=\"login_failed\">\"Login failed\"</string>\r\n\r\n    <!--not sus what so ever-->\r\n    <string name=\"akzeptieren_sie_die_agbs\">Akzeptieren Sie die <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\"> AGB</a>s!</string>\r\n    <string name=\"string_einkaufsliste\">Einkaufsliste</string>\r\n\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"anzahl\">Anzahl</string>\r\n    <string name=\"produkt\">Produkt</string>\r\n    <string name=\"string_logout\">Logout</string>\r\n    <string name=\"insert\">Insert</string>\r\n\r\n    <!--Settings-->\r\n    <string name=\"add_on_top\">Add on top</string>\r\n\r\n    <!-- Strings used for fragments for navigation -->\r\n\r\n    <!-- Preference Titles -->\r\n\r\n    <!-- Messages Preferences -->\r\n\r\n    <!-- Sync Preferences -->\r\n    <string name=\"rezepte\">Rezepte</string>\r\n    <string name=\"favorites\">Favorites</string>\r\n    <string name=\"planer\">Planer</string>\r\n\r\n    <!-- Preference Titles -->\r\n    <string name=\"messages_header\">Messages</string>\r\n    <string name=\"sync_header\">Sync</string>\r\n\r\n    <!-- Messages Preferences -->\r\n    <string name=\"signature_title\">Your signature</string>\r\n    <string name=\"reply_title\">Default reply action</string>\r\n\r\n    <!-- Sync Preferences -->\r\n    <string name=\"sync_title\">Sync email periodically</string>\r\n    <string name=\"attachment_title\">Download incoming attachments</string>\r\n    <string name=\"attachment_summary_on\">Automatically download attachments for incoming emails</string>\r\n    <string name=\"attachment_summary_off\">Only download attachments when manually requested</string>\r\n    <string name=\"title_activity_settings\">SettingsActivity</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	
++++ b/app/src/main/res/values/strings.xml	
+@@ -54,4 +54,5 @@
+     <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+     <string name="title_activity_settings">SettingsActivity</string>
++    <string name="title_activity_settings2">SettingsActivity2</string>
+ </resources>
+\ No newline at end of file
