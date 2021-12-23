@@ -17,6 +17,10 @@ router.get('/',(req,res) => {
     res.sendfile("index.html");
 });
 
+app.post("/api/login" , (req,res) =>{
+})
+
+
 app.get("/api/did" , (req,res) =>{
     if (req)
     res.json({message:test})
