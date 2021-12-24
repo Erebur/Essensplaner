@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Essensplaner",
+            "database": "${workspaceFolder:server}/db/login.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

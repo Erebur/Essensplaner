@@ -1,0 +1,11 @@
+-- INSERT INTO login (name, password)
+--   VALUES (
+--       'admin',
+--       '42069'
+--     );
+-- Drop table login;
+-- CREATE TABLE login(
+--     name VARCHAR NOT NULL unique,
+--     email VARCHAR unique,
+--     password VARCHAR Not NULL
+-- );
