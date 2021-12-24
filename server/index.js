@@ -16,7 +16,7 @@ let db = DB();
 API();
 
 function DB() {
-    return new sqlite3.Database('db/login.db', (err) => {
+    return new sqlite3.Database('db/SQLite.db', (err) => {
         if (err) {
             console.error(err.message);
         } else {
@@ -36,8 +36,14 @@ function API() {
     });
 
     app.post("/api/login", (req, res) => {
+        db.each(`Select name , email , password 
+                    from login 
+                    WHERE name = ?
+                    OR email = ?`, [req.body["username"]], (err, row) => {
+            if (err) throw err
+            console.log(`requsest from ${row.name}|${row.email}`)
+        });
     });
-
 
     app.get("/api/did", (req, res) => {
         if (req)
@@ -54,4 +60,3 @@ function API() {
         console.log(`Server listening on ${PORT}`);
     });
 }
-
