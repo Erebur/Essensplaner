@@ -4,8 +4,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const app = express();
+const sqlite3 = require('sqlite');
 
 const PORT = process.env.PORT || 3001;
+app.use("/", router);
 
 let test = "Help";
 
@@ -35,5 +37,3 @@ app.post("/api/put",(req , res)=>{
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
 });
-
-app.use("/", router);
