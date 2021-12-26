@@ -9,7 +9,7 @@ const crypto = require("crypto");
 
 const PORT = process.env.PORT || 3001;
 
-const loggedInUsers = {};
+const loggedInUsers = {keq , user};
 
 let db = DB();
 
@@ -53,16 +53,11 @@ function API() {
 				if (req.body["password"] == row.user_password) {
 					//TODO extract login to fun
 					UUID = crypto.randomUUID();
-					loggedInUsers[UUID] = {
-						name: row.user_name,
-						email: row.user_email,
-						group: row.user_group,
-					};
+					loggedInUsers[UUID] = new user(row.user_name, row.user_group);
 					state = true;
 				}
 				response.json({
 					name: row.name,
-					email: row.email,
 					state: state,
 					UUID: UUID,
 				});
@@ -74,10 +69,21 @@ function API() {
 		db.each();
 	});
 	//TODO shopping list get
-	app.get("/api/shoppinglist", (req, res) => {
+	/**
+	 * needs your authentication token and a Produkt name to search
+	 */
+	app.get("/api/shoppinglist/product", (req, res) => {
 		console.log(req.body);
 		if (loggedInUsers.includes(req.body.key)) {
-			db.each("Select * from shoppinglist Where user_ ");
+			db.each(
+				"Select * from shoppinglist Where user_group = ? and product_name = ?",
+				[loggedInUsers[req.body["key"]].group, req.body["product"]],
+				(err, row) => {
+					if (err) console.log(err);
+					//TODO extract to fun
+					res.json({ name: row.product_name, Amount: row.product_amount });
+				}
+			);
 		}
 	});
 
@@ -85,3 +91,19 @@ function API() {
 		console.log(`Server listening on ${PORT}`);
 	});
 }
+
+class user {
+	constructor(name, group) {
+		this.name = name;
+		this.group = group;
+	}
+}
+// class Product {
+// 	constructor(group, name, amount, description, brand) {
+// 		this.group = group;
+// 		this.name = name;
+// 		this.amount = amount;
+// 		this.description = description;
+// 		this.brand = brand;
+// 	}
+// }
