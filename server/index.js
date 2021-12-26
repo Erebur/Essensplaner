@@ -9,9 +9,7 @@ const crypto = require("crypto");
 
 const PORT = process.env.PORT || 3001;
 
-const loggedInUsers = [];
-
-let test = "Help";
+const loggedInUsers = {};
 
 let db = DB();
 
@@ -37,39 +35,50 @@ function API() {
 	});
 
 	app.post("/api/login", (req, response) => {
-	    db.each(
-			`Select name , email , password 
-                    from login 
-                    WHERE name = ?
-                    OR email = ?`,
+		db.each(
+			`Select user_name , user_email , user_password from users WHERE user_name = ? OR user_email = ?`,
 			[req.body["username"]],
 			(err, row) => {
 				if (err) throw err;
 				console.log(
-					`request from ${row.name}|${row.email}|with ${req.body["username"]},${
-						req.body["password"]
-					},${req.body["password"] == row.password}`
+					`request from ${row.user_name}|${row.user_email}|with ${
+						req.body["username"]
+					},${req.body["password"]},${
+						req.body["password"] == row.user_password
+					}`
 				);
 
 				var UUID;
-				if (req.body["password"] == row.password) {
+				var state = false;
+				if (req.body["password"] == row.user_password) {
+					//TODO extract login to fun
 					UUID = crypto.randomUUID();
-					loggedInUsers.push(UUID);
+					loggedInUsers[UUID] = {
+						name: row.user_name,
+						email: row.user_email,
+						group: row.user_group,
+					};
+					state = true;
 				}
-				response.json({ name: row.name, email: row.email, UUID: UUID });
+				response.json({
+					name: row.name,
+					email: row.email,
+					state: state,
+					UUID: UUID,
+				});
 			}
 		);
 	});
-
-	// app.get("/api/did", (req, res) => {
-	//     if (req)
-	//         res.json({ message: test });
-	//     console.log(res);
-	// });
-
-	app.post("/api/put", (req, res) => {
+	//TODO create user post
+	app.post("/api/create_user", (req, res) => {
+		db.each();
+	});
+	//TODO shopping list get
+	app.get("/api/shoppinglist", (req, res) => {
 		console.log(req.body);
-		res.json({ message: "hello" });
+		if (loggedInUsers.includes(req.body.key)) {
+			db.each("Select * from shoppinglist Where user_ ");
+		}
 	});
 
 	app.listen(PORT, () => {

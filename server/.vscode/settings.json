@@ -4,7 +4,7 @@
             "previewLimit": 50,
             "driver": "SQLite",
             "name": "Essensplaner",
-            "database": "${workspaceFolder:server}/db/login.db"
+            "database": "${workspaceFolder:server}/db/SQLite.db"
         }
     ],
     "sqltools.useNodeRuntime": true
