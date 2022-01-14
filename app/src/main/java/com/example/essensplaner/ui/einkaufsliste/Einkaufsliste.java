@@ -15,10 +15,9 @@ import java.util.ArrayList;
 
 public class Einkaufsliste extends AppCompatActivity {
 
-    public static boolean addToTop = false;
     RecyclerView rvEinkaufsliste;
     ArrayList<Product> test = new ArrayList<Product>() {
-        //todo add more products from db
+        //todo get products from db
     };
     EinkaufslisteAdapter einkaufslisteAdapter = new EinkaufslisteAdapter(this, test);
     EditText name;
@@ -43,20 +42,20 @@ public class Einkaufsliste extends AppCompatActivity {
         btnInsertEinkauf = findViewById(R.id.button);
 
         btnInsertEinkauf.setOnClickListener(v -> {
-            test.add(findProduct());
-            einkaufslisteAdapter.notifyItemChanged(0);
+            btnInsertEinkauf(v);
+            einkaufslisteAdapter.notifyDataSetChanged();
         });
 
     }
 
-    public void btnInsertEinkauf(View view) {
-        if (!addToTop) {
-            test.add(findProduct());
-        } else {
-            test.add(0, findProduct());
-        }
+    //TODO timestamps?
 
+    public void btnInsertEinkauf(View view) {
+        test.add(0, findProduct());
+        //TODO send Arraylist to DB
     }
+
+    //TODO btnDeleteEinkauf
 
     private Product findProduct() {
         return new Product(Integer.parseInt(anzahl.getText().toString()), name.getText().toString());
