@@ -9,7 +9,7 @@ const crypto = require("crypto");
 
 const PORT = process.env.PORT || 3001;
 
-const loggedInUsers = {keq , user};
+const loggedInUsers = {};
 
 let db = DB();
 
@@ -66,7 +66,11 @@ function API() {
 	});
 	//TODO create user post
 	app.post("/api/create_user", (req, res) => {
-		db.each();
+		db.each(
+			`INSERT INTO users(user_name,user_group, user_password) 
+		Values (?,?,?)`,
+			[req.body["name"], req.body["group"], req.body["password"]]
+		);
 	});
 	//TODO shopping list get
 	/**
