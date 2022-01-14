@@ -8,7 +8,7 @@ const sqlite3 = require("sqlite3");
 const crypto = require("crypto");
 
 const PORT = process.env.PORT || 3001;
-
+const apikey = 42069;
 const loggedInUsers = {};
 
 let db = DB();
@@ -78,16 +78,41 @@ function API() {
 	 */
 	app.get("/api/shoppinglist/product", (req, res) => {
 		console.log(req.body);
-		if (loggedInUsers.includes(req.body.key)) {
+		if (req.body.key == apikey) {
 			db.each(
-				"Select * from shoppinglist Where user_group = ? and product_name = ?",
-				[loggedInUsers[req.body["key"]].group, req.body["product"]],
-				(err, row) => {
-					if (err) console.log(err);
-					//TODO extract to fun
-					res.json({ name: row.product_name, Amount: row.product_amount });
-				}
+				// "Select * from shoppinglist Where user_group = ? and product_name = ?",
+				// [loggedInUsers[req.body["key"]].group, req.body["product"]],
+				// (err, row) => {
+				// 	if (err) console.log(err);
+				// 	//TODO extract to fun
+				// 	res.json({ name: row.product_name, Amount: row.product_amount });
+				// }
 			);
+		}
+	});
+
+	// {
+	// 	"apikey": "42069",
+	// 	"productList": [
+	// 	  {
+	// 		"GroupID": 10,
+	// 		"product_name": "Menschen",
+	// 		"product_amount": 10
+	// 	  },
+	// 		  {
+	// 		"GroupID": 10,
+	// 		"product_name": "Nuggets",
+	// 		"product_amount": 10
+	// 	  }
+	// 	]
+	//   }
+	
+
+	//TODO shopping list put
+	app.post("/api/shoppinglist/syncList", (req, res) => {
+		console.log(req);
+		if (req.body["apikey"] == apikey){
+			db.each("Insert into shoppinglist (user_group ,product_name , product_amount) Values (?) ",[ , ])
 		}
 	});
 
