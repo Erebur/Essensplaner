@@ -11,6 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.essensplaner.R;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Einkaufsliste extends AppCompatActivity {
@@ -23,6 +29,7 @@ public class Einkaufsliste extends AppCompatActivity {
     EditText name;
     EditText anzahl;
     Button btnInsertEinkauf;
+    Button btnDeleteEinkauf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +41,7 @@ public class Einkaufsliste extends AppCompatActivity {
         rvEinkaufsliste = findViewById(R.id.rvEinkaufsliste);
 
         rvEinkaufsliste.setAdapter(einkaufslisteAdapter);
-        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager((this)));
+        rvEinkaufsliste.setLayoutManager(new LinearLayoutManager(this));
 
 
         anzahl = findViewById(R.id.editTextTextPersonName);
@@ -42,7 +49,16 @@ public class Einkaufsliste extends AppCompatActivity {
         btnInsertEinkauf = findViewById(R.id.button);
 
         btnInsertEinkauf.setOnClickListener(v -> {
-            btnInsertEinkauf(v);
+            try {
+                btnInsertEinkauf(v);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            einkaufslisteAdapter.notifyDataSetChanged();
+        });
+        btnDeleteEinkauf = findViewById(R.id.button2);
+        btnDeleteEinkauf.setOnClickListener(v -> {
+            btnDeleteEinkauf(v);
             einkaufslisteAdapter.notifyDataSetChanged();
         });
 
@@ -50,12 +66,41 @@ public class Einkaufsliste extends AppCompatActivity {
 
     //TODO timestamps?
 
-    public void btnInsertEinkauf(View view) {
-        test.add(0, findProduct());
-        //TODO send Arraylist to DB
+    public void btnInsertEinkauf(View view) throws IOException {
+        Product p = findProduct();
+        test.add(0, p);
+        Thread thread = new Thread(() -> {
+            try {
+                post("http://10.0.206.9/api/shoppinglist/", "{\"GroupId\":\"10\",\"product_name\":\"tests\",\"product_amount\":\"5\"}");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        thread.start();
+
     }
 
-    //TODO btnDeleteEinkauf
+    public void btnDeleteEinkauf(View view) {
+        if (test.size() > 0) {
+            test.remove(0);
+        }
+    }
+
+    public void post(String completeUrl, String body) {
+        HttpClient httpClient = new DefaultHttpClient();
+        HttpPost httpPost = new HttpPost(completeUrl);
+        httpPost.setHeader("Content-type", "application/json");
+        try {
+            StringEntity stringEntity = new StringEntity(body);
+            httpPost.getRequestLine();
+            httpPost.setEntity(stringEntity);
+
+            httpClient.execute(httpPost);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private Product findProduct() {
         return new Product(Integer.parseInt(anzahl.getText().toString()), name.getText().toString());
