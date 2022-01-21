@@ -76,45 +76,43 @@ function API() {
 	/**
 	 * needs your authentication token and a Produkt name to search
 	 */
-	app.get("/api/shoppinglist/product", (req, res) => {
-		console.log(req.body);
-		if (req.body.key == apikey) {
+	app.get("/api/shoppinglist/get", (req, res) => {
+		console.log(req);
+		if (true) {
 			db.each(
-				// "Select * from shoppinglist Where user_group = ? and product_name = ?",
-				// [loggedInUsers[req.body["key"]].group, req.body["product"]],
-				// (err, row) => {
-				// 	if (err) console.log(err);
-				// 	//TODO extract to fun
-				// 	res.json({ name: row.product_name, Amount: row.product_amount });
-				// }
+				"Select * from shoppinglist Where user_group = ? and product_name = ?",
+				//TODO 
+				[req.body["GroupID"], req.body["product_name"]],
+				(err, row) => {
+					if (err) console.log(err);
+					res.json({ name: row.product_name, Amount: row.product_amount });
+				}
+			);
+		}
+	});
+
+	//TODO shopping list post
+	app.post("/api/shoppinglist/post", (req, res) => {
+		console.log(req);
+		if (true) {
+			db.each(
+				"Insert into shoppinglist (user_group ,product_name , product_amount) Values (?) ",
+				[
+					req.body["GroupID"],
+					req.body["product_name"],
+					req.body["product_amount"],
+				]
 			);
 		}
 	});
 
 	// {
 	// 	"apikey": "42069",
-	// 	"productList": [
-	// 	  {
-	// 		"GroupID": 10,
-	// 		"product_name": "Menschen",
-	// 		"product_amount": 10
-	// 	  },
-	// 		  {
-	// 		"GroupID": 10,
-	// 		"product_name": "Nuggets",
-	// 		"product_amount": 10
-	// 	  }
-	// 	]
-	//   }
-	
-
-	//TODO shopping list put
-	app.post("/api/shoppinglist/syncList", (req, res) => {
-		console.log(req);
-		if (req.body["apikey"] == apikey){
-			db.each("Insert into shoppinglist (user_group ,product_name , product_amount) Values (?) ",[ , ])
-		}
-	});
+	// 	"GroupID": 10,
+	// 	"product_name": "Menschen",
+	// 	"product_amount": 10
+		  
+	// }
 
 	app.listen(PORT, () => {
 		console.log(`Server listening on ${PORT}`);
@@ -127,12 +125,3 @@ class user {
 		this.group = group;
 	}
 }
-// class Product {
-// 	constructor(group, name, amount, description, brand) {
-// 		this.group = group;
-// 		this.name = name;
-// 		this.amount = amount;
-// 		this.description = description;
-// 		this.brand = brand;
-// 	}
-// }
