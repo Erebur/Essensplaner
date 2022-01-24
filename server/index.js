@@ -34,6 +34,11 @@ function API() {
 		res.sendfile("index.html");
 	});
 
+	app.listen(PORT, () => {
+		console.log(`Server listening on ${PORT}`);
+	});
+
+	//#region authentication
 	app.post("/api/login", (req, response) => {
 		db.each(
 			`Select user_name , user_email , user_password from users WHERE user_name = ? OR user_email = ?`,
@@ -72,6 +77,10 @@ function API() {
 			[req.body["name"], req.body["group"], req.body["password"]]
 		);
 	});
+
+	//#endregion
+
+	//#region Shopping list
 	//TODO shopping list get
 	/**
 	 * needs your authentication token and a Produkt name to search
@@ -105,7 +114,7 @@ function API() {
 			);
 		}
 	});
-
+	// #endregion
 	// {
 	// 	"apikey": "42069",
 	// 	"GroupID": 10,
@@ -114,9 +123,6 @@ function API() {
 		  
 	// }
 
-	app.listen(PORT, () => {
-		console.log(`Server listening on ${PORT}`);
-	});
 }
 
 class user {
