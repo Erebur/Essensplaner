@@ -46,10 +46,8 @@ function API() {
 			(err, row) => {
 				if (err) throw err;
 				console.log(
-					`request from ${row.user_name}|${row.user_email}|with ${
-						req.body["username"]
-					},${req.body["password"]},${
-						req.body["password"] == row.user_password
+					`request from ${row.user_name}|${row.user_email}|with ${req.body["username"]
+					},${req.body["password"]},${req.body["password"] == row.user_password
 					}`
 				);
 
@@ -69,11 +67,11 @@ function API() {
 			}
 		);
 	});
+
 	//TODO create user post
 	app.post("/api/create_user", (req, res) => {
 		db.each(
-			`INSERT INTO users(user_name,user_group, user_password) 
-		Values (?,?,?)`,
+			`INSERT INTO users(user_name,user_group, user_password) Values (?,?,?)`,
 			[req.body["name"], req.body["group"], req.body["password"]]
 		);
 	});
@@ -90,8 +88,10 @@ function API() {
 		if (true) {
 			db.each(
 				"Select * from shoppinglist Where user_group = ? and product_name = ?",
-				//TODO 
-				[req.body["GroupID"], req.body["product_name"]],
+				[
+					req.body["GroupID"],
+					req.body["product_name"]
+				],
 				(err, row) => {
 					if (err) console.log(err);
 					res.json({ name: row.product_name, Amount: row.product_amount });
@@ -103,31 +103,32 @@ function API() {
 	//TODO shopping list post
 	app.post("/api/shoppinglist/post", (req, res) => {
 		console.log(req);
-		if (true) {
-			db.each(
-				"Insert into shoppinglist (user_group ,product_name , product_amount) Values (?) ",
-				[
-					req.body["GroupID"],
-					req.body["product_name"],
-					req.body["product_amount"],
-				]
-			);
-		}
+		// if (req.body["apikey"] != apikey) {
+		// 	break
+		// }
+		db.each(
+			"Insert into shoppinglist (user_group ,product_name , product_amount) Values (?) ",
+			[
+				req.body["GroupID"],
+				req.body["product_name"],
+				req.body["product_amount"],
+			]
+		);
 	});
 	// #endregion
+
 	// {
 	// 	"apikey": "42069",
 	// 	"GroupID": 10,
 	// 	"product_name": "Menschen",
 	// 	"product_amount": 10
-		  
 	// }
 
 }
 
-class user {
-	constructor(name, group) {
-		this.name = name;
-		this.group = group;
-	}
-}
+// class user {
+// 	constructor(name, group) {
+// 		this.name = name;
+// 		this.group = group;
+// 	}
+// }
