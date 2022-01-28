@@ -82,7 +82,7 @@ function API() {
 
 	//#region Shopping list
 	/**
-	 * needs your authentication token and a Produkt name to search
+	 * needs your authentication token and a Product name to search
 	 */
 	app.post("/api/shopping_list/get", (req, res) => {
 		console.log(req.body);
@@ -94,7 +94,7 @@ function API() {
 			[req.body["group_id"], req.body["product_name"]],
 			(err, row) => {
 				if (err) console.log(err);
-				res.json({ name: row.product_name, Amount: row.product_amount });
+				res.json({ name: row.product_name, amount: row.product_amount });
 			}
 		);
 	});
@@ -104,14 +104,16 @@ function API() {
 		if (req.body["api_key"] != api_key) {
 			return;
 		}
+		let json ;
 		db.each(
 			"Select * from shopping_list Where user_group = ?",
 			[req.body["group_id"]],
 			(err, row) => {
 				if (err) console.log(err);
-				res.json({ name: row.product_name, Amount: row.product_amount });
+				json += `"${row.product_name}" :` + JSON.stringify({amount : row.product_amount })
 			}
 		);
+		res.json(json);
 	});
 
 	app.post("/api/shopping_list/post", (req, res) => {
@@ -127,7 +129,7 @@ function API() {
 				req.body["product_amount"],
 			],
 			(err, row) => {
-				console.log(err);
+				if (err) console.log(err);
 				res.status(502).send();
 			}
 			//how tf does this work
