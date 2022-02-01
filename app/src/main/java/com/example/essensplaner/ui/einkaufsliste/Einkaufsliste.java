@@ -64,14 +64,15 @@ public class Einkaufsliste extends AppCompatActivity {
 
     }
 
-    //TODO timestamps?
+    //TODO timestamps
 
     public void btnInsertEinkauf(View view) throws IOException {
         Product p = findProduct();
         test.add(0, p);
         Thread thread = new Thread(() -> {
             try {
-                post("http://10.0.206.9/api/shoppinglist/", "{\"GroupId\":\"10\",\"product_name\":\"tests\",\"product_amount\":\"5\"}");
+                //TODO body -> product
+                post("http://localhost:3001/api/shoppinglist/", "{\"GroupId\":\"10\",\"product_name\":\"tests\",\"product_amount\":\"5\"}");
             } catch (Exception e) {
                 e.printStackTrace();
             }
