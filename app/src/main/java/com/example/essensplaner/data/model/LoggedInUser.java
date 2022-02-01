@@ -7,10 +7,16 @@ public class LoggedInUser {
 
     private String userId;
     private String displayName;
+    private int group ;
 
-    public LoggedInUser(String userId, String displayName) {
+    public LoggedInUser(String userId, String displayName, String group) {
         this.userId = userId;
         this.displayName = displayName;
+        this.group = Integer.parseInt(group);
+    }
+
+    public int getGroup() {
+        return group;
     }
 
     public String getUserId() {

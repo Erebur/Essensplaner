@@ -10,11 +10,11 @@ import java.io.IOException;
  */
 public class LoginDataSource {
 
-    public Result<LoggedInUser> login(String username, String password) {
+    public Result<LoggedInUser> login(String username, String password, String group) {
 
         try {
             // TODO: handle loggedInUser authentication
-            LoggedInUser fakeUser = new LoggedInUser(java.util.UUID.randomUUID().toString(),username);
+            LoggedInUser fakeUser = new LoggedInUser(java.util.UUID.randomUUID().toString(),username , group);
 
             CheckLogin.check(fakeUser , password);
 

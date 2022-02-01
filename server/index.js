@@ -92,7 +92,7 @@ function API() {
 		db.each(
 			"Select * from shopping_list Where user_group = ? and product_name = ?",
 			[req.body["group_id"], req.body["product_name"]],
-			(err, row) => {
+			(err, row) => { 
 				if (err) console.log(err);
 				res.json({ name: row.product_name, Amount: row.product_amount });
 			}
@@ -109,9 +109,9 @@ function API() {
 			[req.body["group_id"]],
 			(err, row) => {
 				if (err) console.log(err);
-				res.json({ name: row.product_name, Amount: row.product_amount });
 			}
 		);
+		res.json();
 	});
 
 	app.post("/api/shopping_list/post", (req, res) => {
