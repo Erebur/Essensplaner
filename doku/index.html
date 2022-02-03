@@ -11,15 +11,15 @@
 <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 
-    <h1>Essensplaner</h1>
-    <h2>Android App</h2>
-    <h3>Login Screen</h3>
-    <img class="center" src="images/Android/LoginScreen.png" alt="LoginScreen">
+<h1>Essensplaner</h1>
+<h2>Android App</h2>
+<h3>Login Screen</h3>
+<img alt="LoginScreen" class="center" src="images/Android/LoginScreen.png">
 
-    <h3>Essensliste</h3>
-    <img class="center" src="images/Android/Essensliste.png" alt="Essensliste">
+<h3>Essensliste</h3>
+<img alt="Essensliste" class="center" src="images/Android/Essensliste.png">
 
-<pre class="prettyprint lang-java" >
+<pre class="prettyprint lang-java">
     public Product(int amount, String name, String description, String brand) {
       this.amount = amount;
       this.name = name;
@@ -30,10 +30,23 @@
 
 
 <h2>Server</h2>
-<p>
+<div align="center">
     Der Server verwendet nodeJS und Express
+</div>
+<pre class="prettyprint">
+app.use("/", router);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-</p>
+router.get("/", (req, res) => {
+    res.sendfile("index.html");
+});
+
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+});
+</pre>
+
 <h3>Database</h3>
 <pre class="prettyprint">
 db.each(
