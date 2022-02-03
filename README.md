@@ -1,0 +1,73 @@
+# Essensplaner
+
+## Android App
+
+### Login Screen
+
+<img alt="LoginScreen" height="500" src="doku/images/Android/LoginScreen.png"/>
+
+### Essensliste
+
+<img alt="Essensliste" height="500" src="doku/images/Android/Essensliste.png"/>
+
+<pre class="prettyprint lang-java">    public Product(int amount, String name, String description, String brand) {
+      this.amount = amount;
+      this.name = name;
+      this.description = description
+      this.brand = brand;
+    }
+</pre>
+
+## Server
+
+<div align="center">Der Server verwendet nodeJS und Express</div>
+
+<pre class="prettyprint">app.use("/", router);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+router.get("/", (req, res) => {
+    res.sendfile("index.html");
+});
+
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+});
+</pre>
+
+### Datenbank
+
+<div align="center">Beispiel die SQLite Datenbank in Javascript zu laden</div>
+
+<pre class="prettyprint">new sqlite3.Database("db/SQLite.db", (err) => {
+    if (err) {
+        console.error(err.message);
+    } else {
+        console.log("Connected to the database.");
+    }
+});
+</pre>
+
+<div align="center">Daten aus der Datenbank rufen wir einfach mit SQL befehlen ab</div>
+
+    db.each(
+        "Select * from shopping_list Where user_group = ? and product_name = ?",
+        [req.body["group_id"], req.body["product_name"]],
+        (err, row) => {
+            if (err) console.log(err);
+            res.json({ name: row.product_name, amount: row.product_amount });
+        }
+## Unsere Probleme
+
+*   Post und Get request aus Android
+*   Android Studio
+*   Frontend und Java-Backend Verknüpfung
+*   Schul-proxy
+
+## Technologien
+
+*   Android Studio
+*   SQLite
+*   Server
+*   nodeJS
+*   Express

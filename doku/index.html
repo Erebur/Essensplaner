@@ -4,11 +4,9 @@
     <meta charset="utf-8"/>
     <title>Essensplaner</title>
     <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </head>
 <body>
-<div id="content"></div>
-
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 
 <h1>Essensplaner</h1>
@@ -28,7 +26,6 @@
     }
 </pre>
 
-
 <h2>Server</h2>
 <div align="center">
     Der Server verwendet nodeJS und Express
@@ -47,7 +44,20 @@ app.listen(PORT, () => {
 });
 </pre>
 
-<h3>Database</h3>
+<h3>Datenbank</h3>
+<div align="center">Beispiel die SQLite Datenbank in Javascript zu laden
+</div>
+<pre class="prettyprint">
+new sqlite3.Database("db/SQLite.db", (err) => {
+    if (err) {
+        console.error(err.message);
+    } else {
+        console.log("Connected to the database.");
+    }
+});
+</pre>
+<div align="center">Daten aus der Datenbank rufen wir einfach mit SQL befehlen ab
+</div>
 <pre class="prettyprint">
 db.each(
     "Select * from shopping_list Where user_group = ? and product_name = ?",
@@ -59,17 +69,23 @@ db.each(
 </pre>
 
 <h2>Unsere Probleme</h2>
-<li>Post und Get</li>
-<li>Android Studio</li>
-<li>Frontend und Java-Backend Verknüpfung</li>
-<li> Schul-proxy</li>
+
+<ul>
+    <li>Post und Get request aus Android</li>
+    <li>Android Studio</li>
+    <li>Frontend und Java-Backend Verknüpfung</li>
+    <li>Schul-proxy</li>
+</ul>
 
 <h2>Technologien</h2>
-<li>Android Studio</li>
-<li>SQLite</li>
-<li>Server</li>
-<li>nodeJS</li>
-<li>Express</li>
+
+<ul>
+    <li>Android Studio</li>
+    <li>SQLite</li>
+    <li>Server</li>
+    <li>nodeJS</li>
+    <li>Express</li>
+</ul>
 
 </body>
 </html>
