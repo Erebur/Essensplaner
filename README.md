@@ -58,6 +58,7 @@ db.each(
         if (err) console.log(err);
         res.json({ name: row.product_name, amount: row.product_amount });
     }
+)
 ```
 ## Unsere Probleme
 
