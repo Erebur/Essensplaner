@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@webcomponents/webcomponentsjs}" />
+    <file url="PROJECT" libraries="{@webcomponents/webcomponentsjs, default, run_prettify}" />
   </component>
 </project>

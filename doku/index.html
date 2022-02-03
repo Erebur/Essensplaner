@@ -3,19 +3,60 @@
 <head>
     <meta charset="utf-8"/>
     <title>Essensplaner</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 <div id="content"></div>
-    <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
-    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
 
-    <!-- Load the element definition -->
-    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
-    <!-- Simply set the `src` attribute to your MD file and win -->
-<!--TODO that seems out of date-->
-<div align="center">
-    <zero-md src="README.md"></zero-md>
-</div>
+
+    <h1>Essensplaner</h1>
+    <h2>Android App</h2>
+    <h3>Login Screen</h3>
+    <img class="center" src="images/Android/LoginScreen.png" alt="LoginScreen">
+
+    <h3>Essensliste</h3>
+    <img class="center" src="images/Android/Essensliste.png" alt="Essensliste">
+
+<pre class="prettyprint lang-java" >
+    public Product(int amount, String name, String description, String brand) {
+      this.amount = amount;
+      this.name = name;
+      this.description = description
+      this.brand = brand;
+    }
+</pre>
+
+
+<h2>Server</h2>
+<p>
+    Der Server verwendet nodeJS und Express
+
+</p>
+<h3>Database</h3>
+<pre class="prettyprint">
+db.each(
+    "Select * from shopping_list Where user_group = ? and product_name = ?",
+    [req.body["group_id"], req.body["product_name"]],
+    (err, row) => {
+        if (err) console.log(err);
+        res.json({ name: row.product_name, amount: row.product_amount });
+    }
+</pre>
+
+<h2>Unsere Probleme</h2>
+<li>Post und Get</li>
+<li>Android Studio</li>
+<li>Frontend und Java-Backend Verknüpfung</li>
+<li> Schul-proxy</li>
+
+<h2>Technologien</h2>
+<li>Android Studio</li>
+<li>SQLite</li>
+<li>Server</li>
+<li>nodeJS</li>
+<li>Express</li>
+
 </body>
 </html>

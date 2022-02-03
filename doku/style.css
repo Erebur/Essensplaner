@@ -1,0 +1,33 @@
+h1, h2, h3, h4 {
+    text-align: center;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 16.5em;
+    height: auto;
+}
+pre{
+    margin: 1em;
+    white-space:pre-wrap;
+    font-weight: bolder;
+
+}
+
+* {
+    font-weight: bold;
+    font-family: "JetBrains Mono", "Roboto Mono Medium for Powerline", monospace;
+}
+h1 {
+    font-size: 2.75em; /* 40px/16=2.5em */
+}
+h2 {
+    font-size: 2em; /* 30px/16=1.875em */
+}
+h3 {
+    font-size: 1.75em; /* 30px/16=1.875em */
+}
+p {
+    font-size: 1em; /* 14px/16=0.875em */
+}
