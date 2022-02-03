@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.essensplaner.ui.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/fragment_login"
         tools:layout="@layout/fragment_login" />
     <activity
         android:id="@+id/einkaufsliste"

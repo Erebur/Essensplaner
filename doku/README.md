@@ -1,9 +1,14 @@
 # Essensplaner
-Jo Bro we try android | Help 
 
 
-    {
-      "firstName": "John",
-      "lastName": "Smith",
-      "age": 25
-    }
+## Android App
+## Login Screen
+<img alt="" height="200" src="images/Android/LoginScreen.png" title="LoginScreen"/>
+
+## Server
+### Database
+Wir verwenden SQLite
+
+
+---
+# Technologien
