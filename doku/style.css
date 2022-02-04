@@ -8,6 +8,13 @@ h1, h2, h3, h4 {
     width: 16.5em;
     height: auto;
 }
+.fullHD {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: auto;
+}
 pre{
     margin: 1em;
     white-space:pre-wrap;
